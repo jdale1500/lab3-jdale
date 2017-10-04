@@ -21,6 +21,7 @@ public class TestIterator {
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
     // TODO also try with a LinkedList - does it make any difference?
+    // list = new LinkedList<Integer>();
   }
 
   @After
@@ -48,17 +49,17 @@ public class TestIterator {
     assertEquals(33, i.next().intValue());
     // TODO fix the expected values in the assertions below
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(44, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(55, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(66, i.next().intValue());
     assertFalse(i.hasNext());
   }
 
@@ -78,6 +79,8 @@ public class TestIterator {
       }
     }
     // TODO using assertEquals and Arrays.asList, express which values are left in the list
+    assertEquals(Arrays.asList(4, list.size());
+    assertEquals(Arrays.asList(33, 44, 55, 66));
     // See TestList.java for examples of how to use Arrays.asList; also see the Java Arrays
     // class for more information
     fail("Not yet implemented"); // remove this line when done
@@ -95,6 +98,11 @@ public class TestIterator {
     double sum = 0;
     int n = 0;
     // TODO use an iterator and a while loop to compute the average (mean) of the values
+    final Iterator<Integer> i = list.iterator();
+    while (i.hasNext()){
+      sum += i.next();
+        n++;
+    }
     // (defined as the sum of the items divided by the number of items)
     // testNonempty shows how to use an iterator; use i.hasNext() in the while loop condition
     assertEquals(61.3, sum / n, 0.1);
